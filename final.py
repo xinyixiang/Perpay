@@ -1,11 +1,15 @@
 import cv2
 import os
-from google.cloud import vision
 import io
 import re
+
+from google.cloud import vision
 from google.cloud.vision import types
-from PIL import Image
 from google.protobuf.json_format import MessageToDict
+from PIL import Image
+
+from flask import Flask, flash, request, redirect, url_for
+from werkzeug.utils import secure_filename
 
 os.environ['GOOGLE_APPLICATION_CREDENTIALS'] = os.path.join(os.curdir, 'CalhackCV-a4f9f43dfda3.json')
 client = vision.ImageAnnotatorClient()
@@ -58,8 +62,3 @@ def get_all_path(folder):
         if img is not None:
             paths.append(pa)
     return paths
-
-
-paths = get_all_path('receipt')
-for pa in paths:
-    print(get_total(pa))
