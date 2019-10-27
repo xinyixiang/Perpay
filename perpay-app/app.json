@@ -1,6 +1,6 @@
 {
   "expo": {
-    "name": "PerPay",
+    "name": "Perpay",
     "slug": "perpay",
     "privacy": "public",
     "sdkVersion": "35.0.0",
@@ -26,6 +26,7 @@
     ],
     "ios": {
       "supportsTablet": true
-    }
+    },
+    "description": ""
   }
 }
